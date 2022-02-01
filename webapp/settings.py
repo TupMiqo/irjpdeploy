@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6*xkggf7w0@zuom+dadrvo50$2+8n3!xh)kf494t6t@&gy=hcg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["irjp.pythonanywhere.com"]
 
 
 # Application definition
@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 'django.db.backends.sqlite3',
-        'NAME': 'irjp_db',    # BASE_DIR / 'db.sqlite3',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3307',
+        'NAME': 'irjp$irjp_db',    # BASE_DIR / 'db.sqlite3',
+        'USER': 'irjp',
+        'PASSWORD': '12345irjp',
+        'HOST': 'irjp.mysql.pythonanywhere-services.com',
+
         'OPTIONS': {
             'init_command': "SET sql_mode= 'STRICT_TRANS_TABLES'",
         }
