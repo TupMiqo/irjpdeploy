@@ -21,13 +21,13 @@
   <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 </head>
-    
+
 <body>
     <section class="get_in_touch">
     <h1 class="title">Register Form</h1>
         <h2 class="Name col-lg-12">FULLNAME (Printed with clear ink)<br><br><br></h2>
-        
-    
+
+
     <div class="container">
         <form action="" method="POST">
             {% csrf_token %}
@@ -133,9 +133,9 @@
                 <input id="language" class="input-text" type="text" name="language" required>
                 <label for="language" class="label">Language &#38 Dialects Spoken</label>
             </div>
-            
+
              <h2 class="Name col-lg-12"><br><br><br>Family Background<br><br></h2>
-            
+
             <div class="form-field col-lg-4">
                 <input id="fatherN" class="input-text" type="text" name="fatherN">
                 <label for="fatherN" class="label">Father's Name</label>
@@ -176,25 +176,8 @@
                 <input id="sister" class="input-text" type="text" name="sister">
                 <label for="sister" class="label">Sister</label>
             </div>
-            <div class="form-field col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                <div class="frame">
-	               <div class="center">
-		              <div class="title">
-	                    <h1>Drop file to upload</h1>
-		              </div>
 
-                    <div class="section dropzone">
-                        <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                        <input type="file" class="upload-input"/>
-                    </div>
 
-                        <button type="button" class="btn" name="uploadbutton">Upload file</button>
-
-	               </div>
-                </div>
-            </div>
-        
-               
                 <div class="form-field col-lg-5">
                     <br><br><br><br>
 			  <input class="input-text" type="text" id="date" name="date" >
@@ -202,7 +185,7 @@
             </div>
 			<script>
 				$(document).ready(function(){
-					var date_input=$('input[name="date"]'); 
+					var date_input=$('input[name="date"]');
 					var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
 					date_input.datepicker({
 						format: 'dd/mm/yyyy',
@@ -214,23 +197,23 @@
 			</script>
             <div class="form-field col-lg-5">
                 <br><br><br><br>
-                <input id="signature" class="input-text" type="disable" name="signature" disabled>   
+                <input id="signature" class="input-text" type="disable" name="signature" disabled>
                 <label for="signature" class="label">Signature</label>
             </div>
-            
+
             <div class="form-field col-lg-5">
-                <a href="{% url 'table' %}">Back
+                <a href="{% url 'Home' %}">Back
                 </a>
         </div>
             <div class="form-field col-lg-5">
                 <button type="button" class="submit-btn" data-toggle="modal" data-target="#userInputReview" onclick="getUserInput()">Submit</button>
         </div>
             </div>
-            
+
            </div>
         <div class="modal" id="userInputReview">
-            
-        
+
+
     <div class="modal-dialogue">
       <div class="modal-content">
         <div class="modal-header">
@@ -258,12 +241,12 @@
             <p id="FamilyBackground4"></p>
             <p id="FamilyBackground5"></p>
             <p id="userDates"></p>
- 
- 
+
+
         </div>
         <div class="modal-footer">
             <input type="text" id="snameH" name="sname" hidden>
-            <input type="text" id="fnameH" name="fname" hidden> 
+            <input type="text" id="fnameH" name="fname" hidden>
             <input type="text" id= "mnameH" name="mname" hidden>
             <input type="text" id= "courseH" name="course" hidden>
             <input type="text" id= "no-streetH" name="nostreet" hidden>
@@ -281,7 +264,7 @@
             <input type="text" id= "recert-noH" name="rescertno" hidden>
             <input type="text" id= "issuedH" name="issued" hidden>
             <input type="text" id= "atH" name="at" hidden>
-            <input type="text" id= "SSS-noH" name="SSSno" hidden> 
+            <input type="text" id= "SSS-noH" name="SSSno" hidden>
             <input type="text" id= "hobbiesH" name="hobbies" hidden>
             <input type="text" id= "talentH" name="talent" hidden>
             <input type="text" id= "physicalH" name="physical" hidden>
@@ -299,21 +282,21 @@
             <input type="text" id= "sisterH" name="sister" hidden>
             <input type="text" id= "dateH" name="date" hidden>
 
-                
+
           <input type="submit" class="btn btn-success" value = 'Save'>
-          
+
         </form>
             <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
         </div>
       </div>
     </div>
-    
+
   </div>
-        
+
   <script type="text/javascript">
-     
+
     function getUserInput() {
-     
+
       var SurName = document.getElementById('sname').value;
       var FirstName = document.getElementById('fname').value;
       var MiddleName = document.getElementById('mname').value;
@@ -351,7 +334,7 @@
       var Sister = document.getElementById('sister').value;
       var Dates = document.getElementById('date').value;
 
-      console.log(SurName);  
+      console.log(SurName);
       console.log(FirstName);
       console.log(MiddleName);
       console.log(Course);
@@ -387,48 +370,48 @@
       console.log(Brothers);
       console.log(Sister);
       console.log(Dates);
-        
+
       document.getElementById('snameH').value = SurName;
-      document.getElementById('fnameH').value = FirstName; 
-      document.getElementById('mnameH').value = MiddleName;  
-      document.getElementById('courseH').value = Course;  
-      document.getElementById('no-streetH').value = NoStreet;  
-      document.getElementById('cityH').value = City;  
-      document.getElementById('provinceH').value = Province;  
-      document.getElementById('tel-noH').value = TelNo;  
-      document.getElementById('birthdayH').value = Birthday;  
-      document.getElementById('birthplaceH').value = Birthplace;  
-      document.getElementById('ageH').value = Age;  
-      document.getElementById('civil-statusH').value = CivilStatus;  
-      document.getElementById('nationalityH').value = Nationality;  
-      document.getElementById('heightH').value = Height;  
-      document.getElementById('innH').value = In;  
-      document.getElementById('weightH').value = Weight;  
-      document.getElementById('recert-noH').value = ResCertNo;  
-      document.getElementById('issuedH').value = Issued;  
-      document.getElementById('atH').value = At;  
-      document.getElementById('SSS-noH').value = SSSno;  
-      document.getElementById('hobbiesH').value = Hobbies;  
-      document.getElementById('talentH').value = Talent ;  
-      document.getElementById('physicalH').value = Physical ;  
-      document.getElementById('marriedH').value = Married;  
-      document.getElementById('languageH').value = Language;  
-      document.getElementById('fatherH').value = Father;  
-      document.getElementById('occupationFH').value = OccupationF;  
-      document.getElementById('mobileFH').value = MobileF;  
-      document.getElementById('addressFH').value = AddressF;  
-      document.getElementById('motherH').value = Mother;  
-      document.getElementById('occupationMH').value = OccupationM ;  
-      document.getElementById('mobileMH').value = MobileM;  
-      document.getElementById('addressMH').value = AddressM;  
-      document.getElementById('brothersH').value = Brothers; 
-      document.getElementById('sisterH').value = Sister;  
-      document.getElementById('dateH').value = Date;  
-    
+      document.getElementById('fnameH').value = FirstName;
+      document.getElementById('mnameH').value = MiddleName;
+      document.getElementById('courseH').value = Course;
+      document.getElementById('no-streetH').value = NoStreet;
+      document.getElementById('cityH').value = City;
+      document.getElementById('provinceH').value = Province;
+      document.getElementById('tel-noH').value = TelNo;
+      document.getElementById('birthdayH').value = Birthday;
+      document.getElementById('birthplaceH').value = Birthplace;
+      document.getElementById('ageH').value = Age;
+      document.getElementById('civil-statusH').value = CivilStatus;
+      document.getElementById('nationalityH').value = Nationality;
+      document.getElementById('heightH').value = Height;
+      document.getElementById('innH').value = In;
+      document.getElementById('weightH').value = Weight;
+      document.getElementById('recert-noH').value = ResCertNo;
+      document.getElementById('issuedH').value = Issued;
+      document.getElementById('atH').value = At;
+      document.getElementById('SSS-noH').value = SSSno;
+      document.getElementById('hobbiesH').value = Hobbies;
+      document.getElementById('talentH').value = Talent ;
+      document.getElementById('physicalH').value = Physical ;
+      document.getElementById('marriedH').value = Married;
+      document.getElementById('languageH').value = Language;
+      document.getElementById('fatherH').value = Father;
+      document.getElementById('occupationFH').value = OccupationF;
+      document.getElementById('mobileFH').value = MobileF;
+      document.getElementById('addressFH').value = AddressF;
+      document.getElementById('motherH').value = Mother;
+      document.getElementById('occupationMH').value = OccupationM ;
+      document.getElementById('mobileMH').value = MobileM;
+      document.getElementById('addressMH').value = AddressM;
+      document.getElementById('brothersH').value = Brothers;
+      document.getElementById('sisterH').value = Sister;
+      document.getElementById('dateH').value = Date;
+
         console.log(document.getElementById('fnameH').value)
-        
-        
-   
+
+
+
       document.getElementById('FullName').innerHTML = "Surname: " + SurName + "     Firstname: " + FirstName + "     Middlename: " + MiddleName + "    Course: " + Course;
       document.getElementById('PresentAddress').innerHTML = "No Street: " + NoStreet + "City: " + City +"Province: " + Province + "Tel No: " + TelNo;
       document.getElementById('PresentAddress2').innerHTML = "Birthday: " + Birthday + "Birthplace: " + Birthplace;
@@ -446,7 +429,7 @@
       document.getElementById('FamilyBackground4').innerHTML = "Address: " + AddressM;
       document.getElementById('FamilyBackground5').innerHTML = "Brothers No: " + Brothers + "Sister: " + Sister;
       document.getElementById('userDates').innerHTML = "Date: " + Dates;
-    
+
     }
       </script>
         </section>
