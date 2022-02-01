@@ -7,13 +7,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 </head>
 <body>
 	<div class="container">
 		<div class="img">
-			<img src="{% static 'img/T-login2.png' %}"> 
-            
+			<img src="{% static 'img/T-login2.png' %}">
+
 		</div>
 		<div class="login-content">
 			<form action="#" method="POST">
@@ -29,7 +28,7 @@
            		   </div>
            		</div>
            		<div class="input-div pass">
-           		   <div class="i"> 
+           		   <div class="i">
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
@@ -41,11 +40,12 @@
 				<div style="color: black;">
 					{% for message in messages %}
 					<p id="messages">{{message}}</p>
-					{% endfor %}	
+					{% endfor %}
 				</div>
-	
+
 
 				<button class="btn btn-primary">Submit</button>
+				<a href="{% url 'Home' %}" class="btn btn-primary" style="text-align: center; padding-top: 10px;" type="submit">Back</a>
 				<div class="txt-c">
 					<h3 style="color: black;">Don't have an account yet?</h3>
 					<a href="{% url 'teacher' %}" style="text-align: center; cursor: pointer;"> Register here </a>
@@ -55,7 +55,7 @@
 
         </div>
     </div>
-	
-    <script type="text/javascript" src="js/main.js"></script> 
+
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
