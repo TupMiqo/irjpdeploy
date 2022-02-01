@@ -13,6 +13,7 @@ def teacher(request):
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
+        form.instance.is_superuser = True
         if form.is_valid():
             form.save()
             return redirect('login2')
@@ -29,7 +30,7 @@ def home(request):
    
 def Register(request):
     if request.user.is_authenticated:
-        return redirect ('table')
+        return redirect ('Home')
     else:
         form = RegistrationForm(request.POST or None)
         if form.is_valid():
@@ -41,7 +42,7 @@ def Register(request):
         return render(request, 'Register.html', context)
 
 def login2(request): 
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user.is_superuser: 
         return redirect ('table')
     else:
         if request.method == 'POST':
@@ -71,7 +72,7 @@ def table(request):
     }
     return render(request, 'table.html', getdata)
 
-
+@login_required(login_url='login2')
 def edittable(request, data_id):
     student_data = Registration.objects.get(id=data_id)
     form = RegistrationForm(request.POST or None, instance=student_data)
@@ -87,7 +88,7 @@ def edittable(request, data_id):
 
     return render(request, 'edittable.html', context)
 
-
+@login_required(login_url='login2')
 def delete_data(request, data_id):
     student_info = Registration.objects.get(id=data_id)
 
