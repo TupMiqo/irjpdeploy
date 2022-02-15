@@ -1,13 +1,22 @@
 * {
-  font-family: sans-serif; 
+  font-family: sans-serif;
 }
-
+.mt32{
+   background-color: #E6E4E4;
+}
+.header-inner{position: absolute;
+top: 0;
+left: 0;
+width:100%;
+z-index: 99;
+background-color: #009879;
+}
 .table-sortable{
-  
+
   border-collapse: collapse;
   margin-top: 150px;
   font-size: 16px;
-  min-width: 400px;       
+  min-width: 400px;
   margin: auto;
   table-layout: fixed;
   margin-top: 150px;
@@ -54,13 +63,13 @@
 
 .search-box {
    position: absolute;
-   top: 16%;
-   left: 21%;   
+   top: 15%;
+   left: 23%;
    transform: translate(-50%, -50%);
    background:#009879;
    height: 58px;
-   border-radius: 40px; 
-   padding: 10px;       
+   border-radius: 40px;
+   padding: 10px;
 }
 
 .search-btn{
@@ -87,6 +96,25 @@
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
+}
+.btn2{
+	display: block;
+	height: 50px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn:hover{
+	background-position: right;
 }
 
 .table-sortable th {
