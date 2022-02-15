@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -8,17 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="tablesort.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/tablesort.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.css">
 </head>
 
 
 <body class="mt32">
+    <header class="header">
+  <div class="header-inner">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-lg my-navbar">
+  <span class="navbar-brand">Technological University of the Philippines - ADMIN VIEW</span>
+</nav>
+
+    </div>
+  </div>
+
+
+</header>
     <div class="container">
-        <form action="{% url 'logout' %}">
-            <button class="btn btn-primary">Log out</button>
-        </form>
         <div class="search-box">
       <input class="search-txt" type="search" placeholder="Search..." class="form-control search-input" data-table="customers-list">
       <a class="search-btn" href="#"><i class="fas fsearch"></i></a>
@@ -30,57 +40,49 @@
               <th>STUDENT NAME</th>
               <th>COURSE</th>
               <th>TEL NO.</th>
-              <th>ADDRESS</th>
-              <th>CITY</th>
-              <th>PROVINCE</th>
-              <th>BIRTHDAY</th>
-              <th>BIRTHPLACE</th>
-              <th>AGE</th>
-              <th>CIVIL STATUS</th>
-              <th>NATIONALITY</th>
               <th>ACTION</th>
-       
+
 
             </tr>
           </thead>
           <tbody>
             {% for reg in data %}
-              <tr> 
-                  <td>{{ reg.id }}</td>   
+              <tr>
+                  <td>{{ reg.id }}</td>
                   <td>{{ reg.sname }}, {{ reg.fname }} {{ reg.mname }}</td>
                   <td>{{ reg.course }}</td>
                   <td>{{ reg.telno }}</td>
-                  <td>{{ reg.nostreet }}</td>
-                  <td>{{ reg.city }}</td>
-                  <td>{{ reg.province }}</td>
-                  <td>{{ reg.birthday }}</td>
-                  <td>{{ reg.birthplace }}</td>
-                  <td>{{ reg.age }}</td>
-                  <td>{{ reg.civilstatus }}</td>
-                  <td>{{ reg.nationality }}</td>
+
                   <td>
                       <a href=" {% url 'edit' reg.id %} " class="btn btn-primary" >EDIT</a>
-                      <a href=" {% url 'delete' reg.id %} " class="btn btn-danger" >DELETE</a>
+                      <a href=" {% url 'delete' reg.id %} " class="btn btn-danger" >DEL</a>
                     </td>
               </tr>
             {% endfor %}
-              
+
             </tbody>
-            </table>    
+            </table>
+        <form action="{% url 'logout' %}">
+            <button class="btn2">Log out</button>
+        </form>
         </div>
 
     <script>
-    
-   /* var s_list = [
-        {"fullname": "Jericho Lois T Dionisio", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-0360"},
+
+    /* var s_list = [
+        {"fullname": "Luna Mark Lester", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-0360"},
         {"fullname": "Bermon O Ferreras", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-"},
         {"fullname": "Nigelle Jarred Salvador", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-"},
-        {"fullname": "Leomhar Manuel", "year_section": "BET-CPET", "company_name": "Joker ng CPET", "student_id": "TUPC-18-"},
-                
-        
+        {"fullname": "Kyle Cagamapang", "year_section": "BET-CPET", "company_name": "Joker ng CPET", "student_id": "TUPC-18-"},
+
+
     ];*/
-        
-        
+
+
+
+    ];*/
+
+
         function makeTableFromList(list){
       var table = document.getElementById('s_table');
       for (var i = 0; i < list.length; i++){
@@ -93,9 +95,9 @@
         }
       }
     };
-        
+
     window.addEventListener("load", makeTableFromList());
-    
+
     </script>
     <script>
         (function(document) {
@@ -136,11 +138,11 @@
 
         })(document);
     </script>
-  
- 
 
 
- 
+
+
+
 
 
     <script src="tablesort.js"></script>
